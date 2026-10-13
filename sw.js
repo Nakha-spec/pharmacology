@@ -1,5 +1,5 @@
-const V='crx-v6';const SHELL=['./','index.html','manifest.webmanifest','icons/crx2-icon-192.png','icons/crx2-icon-512.png'];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
+const PACKS=["sl-ans_ad.js", "sl-ans_ch.js", "sl-ans_in.js", "sl-cns_ad.js", "sl-cns_an.js", "sl-cns_ap.js", "sl-cns_ep.js", "sl-cns_ga.js", "sl-cns_ic.js", "sl-cns_la.js", "sl-cns_mr.js", "sl-cns_pk.js", "sl-cns_se.js", "sl-cns_st.js", "sl-cv_an.js", "sl-cv_ar.js", "sl-cv_co.js", "sl-cv_dl.js", "sl-cv_du.js", "sl-cv_hf.js", "sl-cv_ht.js", "sl-gp_dd.js", "sl-gp_pd.js", "sl-gp_pg.js", "sl-gp_pk.js"];const V='crx-v10';const SHELL=['./','index.html','manifest.webmanifest','icons/crx2-icon-192.png','icons/crx2-icon-512.png'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL).then(()=>Promise.all(PACKS.map(p=>c.add(p).catch(()=>0))))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;const u=new URL(r.url);if(u.origin!==location.origin)return;
 if(r.mode==='navigate'){e.respondWith(fetch(r).then(x=>{const y=x.clone();caches.open(V).then(c=>c.put('index.html',y));return x}).catch(()=>caches.match('index.html')));return}
