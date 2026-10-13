@@ -1,4 +1,4 @@
-const V = "crucialrx-v2";
+const V = "crucialrx-v3";
 const PACKS = ["sl-ans_ad.js", "sl-ans_ch.js", "sl-ans_in.js", "sl-cns_ad.js", "sl-cns_an.js", "sl-cns_ap.js", "sl-cns_ep.js", "sl-cns_ga.js", "sl-cns_ic.js", "sl-cns_la.js", "sl-cns_mr.js", "sl-cns_pk.js", "sl-cns_se.js", "sl-cns_st.js", "sl-cv_an.js", "sl-cv_ar.js", "sl-cv_co.js", "sl-cv_dl.js", "sl-cv_du.js", "sl-cv_hf.js", "sl-cv_ht.js", "sl-gp_dd.js", "sl-gp_pd.js", "sl-gp_pg.js", "sl-gp_pk.js"];
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "favicon.ico", "apple-touch-icon.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
