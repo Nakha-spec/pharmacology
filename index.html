@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><script>window.__SITE=1;window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__bip=e;if(window.__bipcb)window.__bipcb()})</script><meta name="theme-color" content="#6d28d9"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="32x32" href="icons/crx2-fav-32.png?v=3"><link rel="icon" type="image/png" sizes="192x192" href="icons/crx2-icon-192.png?v=3"><link rel="shortcut icon" href="favicon.ico?v=3"><link rel="apple-touch-icon" href="icons/crx2-apple.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Crucial Rx"><title>Crucial Rx Revision Drill</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><script>window.__SITE=1</script><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#6d28d9"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1"><link rel="icon" href="/favicon.ico?v=1" sizes="48x48"><link rel="icon" type="image/png" href="/favicon-96.png?v=1" sizes="96x96"><script>if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("/sw.js"));</script><title>Crucial Rx Revision Drill</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -245,6 +245,20 @@ footer h3{margin:18px 0 0;font:600 .72rem var(--mono);letter-spacing:.09em;text-
 .sjump{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
 .theme{display:none}
 .rxmark{background:var(--accent)}
+#instBar{position:fixed;inset:0;z-index:9999;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;padding:.6rem}
+.ib-card{pointer-events:auto;width:100%;max-width:520px;display:flex;align-items:center;gap:.7rem;background:#fff;color:#14203D;border-radius:16px;padding:.6rem .7rem;box-shadow:0 18px 40px -10px rgba(40,10,90,.55),0 0 0 1px #e1d8f2;animation:ibUp .35s ease-out}
+#instBar img{width:44px;height:44px;border-radius:10px;flex:none;border:1px solid #e3e8f6}
+.ib-t{flex:1;min-width:0;line-height:1.25}.ib-t b{display:block;font-size:.92rem}.ib-t small{display:block;color:#5b6987;font-size:.78rem;margin-top:.1rem}.ib-t small b{display:inline;font-size:inherit}.ib-sh{display:inline-block;border:1px solid #9aa6c4;border-radius:5px;padding:0 .25rem;font-size:.8rem;line-height:1.2}
+.ib-go{border:0;background:#6d28d9;color:#fff;font:inherit;font-weight:700;font-size:.9rem;border-radius:11px;padding:.6rem 1rem;cursor:pointer}
+.ib-x{border:0;background:none;color:#7a869f;font-size:1.6rem;line-height:1;cursor:pointer;padding:.1rem .3rem}.ib-later{display:none}
+@media(min-width:641px){
+#instBar{align-items:center;pointer-events:auto;background:rgba(30,10,70,.55);backdrop-filter:blur(3px)}
+.ib-card{flex-direction:column;text-align:center;max-width:430px;padding:2rem 2rem 1.4rem;border-radius:24px;gap:.9rem;box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+#instBar img{width:96px;height:96px;border-radius:22px}.ib-t b{font-size:1.35rem;color:#4c1d95}.ib-t small{font-size:.98rem;margin-top:.5rem;line-height:1.45}
+.ib-go{width:100%;font-size:1.05rem;padding:.85rem 1rem}.ib-x{display:none}.ib-later{display:block;border:0;background:none;color:#5b6987;font:inherit;font-weight:600;cursor:pointer;padding:.3rem .6rem}.ib-later:hover{text-decoration:underline}
+}
+@keyframes ibUp{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+@media print{#instBar{display:none}}
 </style>
 </head><body><div class="shell" id="app"></div>
 <div class="scrim" id="scrim"></div>
@@ -2025,21 +2039,42 @@ render(true);
 
 
 </script>
-<style>#instb{position:fixed;right:14px;bottom:14px;z-index:60;background:#6d28d9;color:#fff;border:0;border-radius:999px;padding:12px 18px;font:600 14px system-ui,sans-serif;box-shadow:0 6px 20px rgba(60,30,120,.35);display:none;cursor:pointer}#instt{position:fixed;left:12px;right:12px;bottom:70px;z-index:61;background:#1e1433;color:#fff;border-radius:14px;padding:14px 16px;font:14px/1.5 system-ui,sans-serif;display:none}
-#instbar{position:fixed;left:12px;right:12px;bottom:14px;z-index:70;background:#fff;color:#1e1433;font:14px/1.4 system-ui,sans-serif;padding:14px;border-radius:20px;display:none;align-items:center;gap:12px;box-shadow:0 10px 40px rgba(60,30,120,.35);border:1px solid #e1d8f2}#instbar img{width:56px;height:56px;border-radius:14px;flex:none}#instbar .tx{flex:1;min-width:0}#instbar b{display:block;font-size:16px;margin-bottom:2px}#instbar small{color:#675a84;font-size:13px;line-height:1.35;display:block}#instbar button{border:0;border-radius:14px;padding:12px 18px;font:700 15px system-ui,sans-serif;cursor:pointer}#instgo{background:#6d28d9;color:#fff}#instno{background:transparent;color:#675a84;padding:8px;font-size:20px}</style>
-<div id="instbar"><img src="icons/crx2-icon-192.png" alt=""><div class="tx"><b>Install Crucial Rx</b><small>Open it straight from your home screen or desktop, like any app. Works offline.</small></div><button id="instgo">Install</button><button id="instno" aria-label="Close">&#10005;</button></div>
-<button id="instb">Install app</button><div id="instt"></div>
-<script>(function(){var b=document.getElementById('instb'),t=document.getElementById('instt'),bar=document.getElementById('instbar'),ev=null;
-var sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone;if(sa){if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){setTimeout(function(){r.active&&r.active.postMessage('precache')},4000)});return}
-var ios=/iphone|ipad|ipod/i.test(navigator.userAgent),dis=false;try{dis=localStorage.getItem('crx-inst-no')==='1'}catch(e){}
-function hide(){bar.style.display='none';b.style.display='none';t.style.display='none'}
-function how(){t.innerHTML=ios?'On iPhone: open this page in <b>Safari</b>, tap the <b>Share</b> button, then <b>Add to Home Screen</b>.':(location.protocol==='file:'?'This copy is opened from a file, so it cannot be installed. Open the website address in Chrome instead.':'If you opened this link from WhatsApp or another app, tap the <b>&#8942; menu</b> then <b>Open in Chrome</b> first, because apps cannot install from inside their own browser. In Chrome, tap <b>&#8942;</b> then <b>Install app</b> (or <b>Add to Home screen</b>). On a laptop use the install icon at the right end of the address bar.');t.style.display='block';setTimeout(function(){t.style.display='none'},16000)}
-function go(){if(ev){ev.prompt();ev.userChoice.then(function(){ev=null;hide()})}else how()}
-function show(){if(dis){b.style.display='block'}else{bar.style.display='flex'}}
-window.__bipcb=function(){ev=window.__bip;show()};if(window.__bip){ev=window.__bip;show()}
-window.addEventListener('appinstalled',function(){hide();pre()});function pre(){if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){r.active&&r.active.postMessage('precache')})}
-if(ios)show();else setTimeout(function(){if(!ev&&location.protocol.indexOf('http')===0){b.style.display='block'}},8000);
-document.getElementById('instgo').onclick=go;b.onclick=go;
-document.getElementById('instno').onclick=function(){bar.style.display='none';b.style.display='block';try{localStorage.setItem('crx-inst-no','1')}catch(e){}}})();</script>
-<script>if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});</script>
+<script>
+(function installBanner() {
+  const APP_NAME = "Crucial Rx", KEY = "crx_installed";
+  const standalone = () => (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+  const lsGet = k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, lsSet = k => { try { localStorage.setItem(k, "1"); } catch (e) {} };
+  if (standalone()) { lsSet(KEY); if (navigator.serviceWorker && navigator.serviceWorker.ready) navigator.serviceWorker.ready.then(r => setTimeout(() => r.active && r.active.postMessage("precache"), 4000)); return; }
+  let dp = null, shown = false;
+  const ua = navigator.userAgent, ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  const inApp = /FBAN|FBAV|Instagram|WhatsApp|Line\/|MicroMessenger|Twitter/i.test(ua);
+  const iosSafari = ios && /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua) && !inApp;
+  const macSafari = !ios && /Macintosh/.test(ua) && /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR|Firefox/.test(ua);
+  window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); dp = e; show(); });
+  window.addEventListener("appinstalled", () => { lsSet(KEY); hide(); if (navigator.serviceWorker && navigator.serviceWorker.ready) navigator.serviceWorker.ready.then(r => r.active && r.active.postMessage("precache")); });
+  const hide = () => { const b = document.getElementById("instBar"); if (b) b.remove(); };
+  async function show() {
+    if (shown || lsGet(KEY) || standalone() || document.getElementById("instBar")) return;
+    try { if (navigator.getInstalledRelatedApps) { const r = await navigator.getInstalledRelatedApps(); if (r && r.length) { lsSet(KEY); return; } } } catch (e) {}
+    if (!dp && !ios && !macSafari) return;
+    shown = true;
+    const b = document.createElement("div"); b.id = "instBar"; b.setAttribute("role", "dialog"); b.setAttribute("aria-label", "Install app");
+    const logo = '<img src="/icon-192.png?v=1" alt="">';
+    const head = `<b>Install the ${APP_NAME} app</b>`;
+    const body = dp ? "Open it straight from your home screen or desktop, like any app."
+      : iosSafari ? 'Tap <span class="ib-sh">&#x2B06;&#xFE0E;</span> <b>Share</b> at the bottom of Safari, then <b>Add to Home Screen</b>.'
+      : macSafari ? 'In Safari, open the <b>File</b> menu and choose <b>Add to Dock</b>.'
+      : "On iPhone, open this page in <b>Safari</b>, tap Share, then <b>Add to Home Screen</b>.";
+    b.innerHTML = `<div class="ib-card">${logo}<div class="ib-t">${head}<small>${body}</small></div>${dp ? '<button class="ib-go" id="ibGo">Install</button>' : ""}<button class="ib-later" id="ibLater">Not now</button><button class="ib-x" id="ibX" aria-label="Not now">&times;</button></div>`;
+    document.body.appendChild(b);
+    document.getElementById("ibLater").onclick = hide;
+    b.onclick = e => { if (e.target === b && matchMedia("(min-width:641px)").matches) hide(); };
+    document.getElementById("ibX").onclick = hide;
+    const go = document.getElementById("ibGo");
+    if (go) go.onclick = async () => { try { dp.prompt(); const c = await dp.userChoice; if (c && c.outcome === "accepted") lsSet(KEY); } catch (e) {} dp = null; hide(); };
+  }
+  if (ios || macSafari) setTimeout(show, 1200);
+})();
+
+</script>
 </body></html>
