@@ -1,6 +1,6 @@
-const V = "crucialrx-v5";
+const V = "crucialrx-v7";
 const PACKS = ["sl-ans_ad.js", "sl-ans_ch.js", "sl-ans_in.js", "sl-cns_ad.js", "sl-cns_an.js", "sl-cns_ap.js", "sl-cns_ep.js", "sl-cns_ga.js", "sl-cns_ic.js", "sl-cns_la.js", "sl-cns_mr.js", "sl-cns_pk.js", "sl-cns_se.js", "sl-cns_st.js", "sl-cv_an.js", "sl-cv_ar.js", "sl-cv_co.js", "sl-cv_dl.js", "sl-cv_du.js", "sl-cv_hf.js", "sl-cv_ht.js", "sl-gp_dd.js", "sl-gp_pd.js", "sl-gp_pg.js", "sl-gp_pk.js"];
-const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "favicon-96.png"];
+const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "favicon-96.png", "zz_logo.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener("message", e => { if (e.data === "precache") e.waitUntil(caches.open(V).then(c => Promise.all(PACKS.map(p => c.match(p).then(m => m || c.add(p)).catch(() => 0))))); });
